@@ -44,44 +44,23 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  List image = ["images/img.png", "images/img_1.png","images/img.png", "image"
+      "s/img_1.png","images/img.png", "images/img_1.png","images/img.png", "images/img_1.png"];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.orange,
+        body: GridView.count(
+          crossAxisCount: 2, // 2 columns
+          children: List.generate(image.length, (index) {
+            return Card(
+              color: Colors.blue[100],
+              child: Center(child: Image(image: AssetImage(image[index]))),
+            );
+          }),
         ),
-      ),
-
-      floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          FloatingActionButton(
-            heroTag: 'btn1',
-            onPressed: _incrementCounter,
-            tooltip: 'Increment',
-            child: Icon(Icons.add),
-          ),
-          SizedBox(height: 10),
-          FloatingActionButton(
-            heroTag: 'btn2',
-            onPressed: _decrimentCounter,
-            tooltip: 'Second Button',
-            child: Icon(Icons.remove),
-          ),
-        ],
       ),
     );
   }
