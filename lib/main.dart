@@ -43,6 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter--;
     });
   }
+  void _resetCounter() {
+    setState(() {
+      _counter=0;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +78,12 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: _incrementCounter,
             tooltip: 'Increment',
             child: Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            heroTag: 'btn3',
+            onPressed: _resetCounter,
+            tooltip: 'Reset',
+            child: Icon(Icons.reset_tv),
           ),
           SizedBox(height: 10),
           FloatingActionButton(
