@@ -39,11 +39,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _decrimentCounter() {
-    setState(() {
-      _counter--;
-    });
+    if (_counter>0){
+      setState(() {
+        _counter--;
+      });
+
+
+
+    }
+
   }
   void _resetCounter() {
+
     setState(() {
       _counter=0;
     });
