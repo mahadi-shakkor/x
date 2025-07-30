@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,8 +45,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  List image = ["images/img.png", "images/img_1.png","images/img.png", "image"
-      "s/img_1.png","images/img.png", "images/img_1.png","images/img.png", "images/img_1.png"];
+  List image = [
+    "images/img.png",
+    "images/img_1.png",
+    "images/img.png",
+    "image"
+        "s/img_1.png",
+    "images/img.png",
+    "images/img_1.png",
+    "images/img.png",
+    "images/img_1.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: List.generate(image.length, (index) {
             return Card(
               color: Colors.blue[100],
-              child: Center(child: Image(image: AssetImage(image[index]))),
+              child: Column(
+                children: [
+                  Image(image: AssetImage(image[index])),
+                  Text("data", style: GoogleFonts.abel(fontSize: 20)),
+                ],
+              ),
             );
           }),
         ),
