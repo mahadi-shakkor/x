@@ -34,12 +34,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor :Colors.black,
-          body: Column(children: [
-        
-        
-        Text("data" ,style: TextStyle(color: Colors.red ,fontSize: 50),)
-      ])),
+        backgroundColor: Colors.orangeAccent,
+        body: Center(
+          child: ListView.separated(
+            itemCount: 10,
+            
+
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                height: 200,
+                width: 100,
+                color: Colors.pinkAccent,
+
+                child: Text('index $index'),
+              );
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return SizedBox(height: 30);
+            },
+          ),
+        ),
+      ),
     );
   }
 }
